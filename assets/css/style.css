@@ -1,3 +1,4 @@
+/* put the link to the highscores and the timer in the top corners of the page */
 header {
     display: flex;
     justify-content: space-between;
