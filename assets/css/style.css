@@ -5,7 +5,18 @@ header {
     padding: 0 5px;
 }
 
+.answer {
+    background-color: darkcyan;
+    border-color: darkcyan;
+    display: block;
+}
+
 /* formatting for the elements on the start page */
 #start-page {
     text-align: center;
+}
+
+/* quiz-page starts hidden */
+#quiz-page {
+    display: none;
 }
