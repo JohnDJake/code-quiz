@@ -44,13 +44,13 @@ document.querySelector("#start").addEventListener("click", function () {
 
     // start the quiz
     nextQuestion();
-    document.querySelectorAll(".answer").forEach(function(el) {
-        el.addEventListener("click", function(event) {
-        if (event.target.textContent != questions[questionIndex].correctAnswer) {
-            timer -= 10;
-        }
-        nextQuestion();
-    })
+    document.querySelectorAll(".answer").forEach(function (el) {
+        el.addEventListener("click", function (event) {
+            if (event.target.textContent != questions[questionIndex].correctAnswer) {
+                timer -= 10;
+            }
+            nextQuestion();
+        })
     })
 })
 
