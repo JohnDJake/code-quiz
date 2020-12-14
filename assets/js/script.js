@@ -9,13 +9,13 @@ const answer3El = document.querySelector("#answer3");
 
 
 var questions = [{
-    question: "lajerfajejsdf",
-    answers: ["aerigj", "alkjef", "akjsrf", "aosejf"],
-    correctAnswer: "akjsrf"
+    question: "Which is not a primitive data type in JavaScript?",
+    answers: ["string", "number", "boolean", "object"],
+    correctAnswer: "object"
 }, {
-    question: "jaergljhjk",
-    answers: ["ntrewglkj", "kajergnkj", "relkrtjhb", "kaejrng"],
-    correctAnswer: "ntrewglkj"
+    question: "What do you call a function that you pass to an event handler?",
+    answers: ["callback function", "callforward function", "textforward function", "emailback function"],
+    correctAnswer: "callback function"
 }]
 
 var timer = 60;
@@ -61,9 +61,9 @@ function nextQuestion() {
         return;
     }
     questionEl.textContent = questions[questionIndex].question;
+    answer0El.textContent = questions[questionIndex].answers[0];
     answer1El.textContent = questions[questionIndex].answers[1];
     answer2El.textContent = questions[questionIndex].answers[2];
-    answer0El.textContent = questions[questionIndex].answers[0];
     answer3El.textContent = questions[questionIndex].answers[3];
 }
 
