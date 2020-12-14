@@ -46,6 +46,7 @@ document.querySelector("#start").addEventListener("click", function () {
     nextQuestion();
     document.querySelectorAll(".answer").forEach(function (el) {
         el.addEventListener("click", function (event) {
+            event.target.blur();
             if (event.target.textContent != questions[questionIndex].correctAnswer) {
                 timer -= 10;
             }
