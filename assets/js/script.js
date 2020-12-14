@@ -20,6 +20,7 @@ var questions = [{
 
 var timer = 60;
 var questionIndex = -1;
+var timerInterval;
 
 // Switch to the next question
 function nextQuestion() {
@@ -47,6 +48,7 @@ function shuffleArray(array) {
 // End the quiz
 // TODO write some code
 function endGame() {
+    clearInterval(timerInterval);
     quizPageEl.style.display = "none";
 }
 
@@ -62,11 +64,10 @@ document.querySelector("#start").addEventListener("click", function () {
     quizPageEl.style.display = "block";
 
     // start the timer
-    var timerInterval = setInterval(function () {
+    timerInterval = setInterval(function () {
         // decrement the timer and update the html timer
         timerSpan.textContent = --timer;
         if (timer <= 0) {
-            clearInterval(timerInterval);
             endGame();
         }
     }, 1000);
