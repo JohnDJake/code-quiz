@@ -21,6 +21,35 @@ var questions = [{
 var timer = 60;
 var questionIndex = -1;
 
+// Switch to the next question
+function nextQuestion() {
+    if (++questionIndex == questions.length) {
+        endGame();
+        return;
+    }
+    questionEl.textContent = questions[questionIndex].question;
+    answer0El.textContent = questions[questionIndex].answers[0];
+    answer1El.textContent = questions[questionIndex].answers[1];
+    answer2El.textContent = questions[questionIndex].answers[2];
+    answer3El.textContent = questions[questionIndex].answers[3];
+}
+
+// Randomly shuffle an array
+function shuffleArray(array) {
+    for (var i = array.length - 1; i > 0; i--) {
+        var j = Math.floor(Math.random() * i);
+        var temp = array[i];
+        array[i] = array[j];
+        array[j] = temp;
+    }
+}
+
+// End the quiz
+// TODO write some code
+function endGame() {
+    quizPageEl.style.display = "none";
+}
+
 // Shuffle the questions and the answers
 shuffleArray(questions);
 for (var i = 0; i < questions.length; i++) {
@@ -54,32 +83,3 @@ document.querySelector("#start").addEventListener("click", function () {
         })
     })
 })
-
-// Switch to the next question
-function nextQuestion() {
-    if (++questionIndex == questions.length) {
-        endGame();
-        return;
-    }
-    questionEl.textContent = questions[questionIndex].question;
-    answer0El.textContent = questions[questionIndex].answers[0];
-    answer1El.textContent = questions[questionIndex].answers[1];
-    answer2El.textContent = questions[questionIndex].answers[2];
-    answer3El.textContent = questions[questionIndex].answers[3];
-}
-
-// Randomly shuffle an array
-function shuffleArray(array) {
-    for (var i = array.length - 1; i > 0; i--) {
-        var j = Math.floor(Math.random() * i);
-        var temp = array[i];
-        array[i] = array[j];
-        array[j] = temp;
-    }
-}
-
-// End the quiz
-// TODO write some code
-function endGame() {
-    quizPageEl.style.display = "none";
-}
