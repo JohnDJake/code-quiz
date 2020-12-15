@@ -27,6 +27,10 @@ var questions = [{
     question: "Which of the following is not a reserved keyword?",
     answers: ["with", "set", "debugger", "catch"],
     correctAnswer: "set"
+}, {
+    question: "Which of the following is a string method?",
+    answers: [".includes", ".split", ".repeat", "all of the above/below"],
+    correctAnswer: "all of the above/below"
 }]
 
 var timer = 60;
