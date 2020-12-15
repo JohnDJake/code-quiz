@@ -2,6 +2,7 @@ const timerSpan = document.querySelector("#timer");
 const startPageEl = document.querySelector("#start-page");
 const quizPageEl = document.querySelector("#quiz-page");
 const scorePageEl = document.querySelector("#score-page");
+const initialsInputEl = document.querySelector("#initials");
 const scoreInputEl = document.querySelector("#score");
 const questionEl = document.querySelector("#question");
 const answer0El = document.querySelector("#answer0");
@@ -94,4 +95,23 @@ document.querySelector("#start").addEventListener("click", function () {
             nextQuestion();
         })
     })
+})
+
+// get the saved highscore and add the new score and save it
+// TODO redirect to the highscores page
+document.querySelector("#score-form").addEventListener("submit", function (event) {
+    // override default form submit behavior
+    event.preventDefault();
+    // make sure the user entered their initials
+    if (initialsInputEl.value == "") { return; }
+    // initials should be capitalized
+    initialsInputEl.value = initialsInputEl.value.toUpperCase();
+    // get savedScores from localStorage, or if there aren't any then initialize an empty array
+    var savedScores = JSON.parse(localStorage.getItem("codeQuizScores")) || [];
+    // add a new score object to the array
+    savedScores.push({ "initials": initialsInputEl.value, "score": timer });
+    // sort it by the score in decreasing order
+    savedScores.sort(function (a, b) { return b.score - a.score });
+    // save the updated scores array to localStorage
+    localStorage.setItem("codeQuizScores", JSON.stringify(savedScores));
 })
