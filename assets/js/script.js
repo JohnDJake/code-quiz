@@ -31,6 +31,10 @@ var questions = [{
     question: "Which of the following is a string method?",
     answers: [".includes", ".split", ".repeat", "all of the above/below"],
     correctAnswer: "all of the above/below"
+}, {
+    question: "Which type of DOM objects can you attach event handlers to?",
+    answers: ["a tags", "button tags", "the window object", "any DOM object"],
+    correctAnswer: "any DOM object"
 }]
 
 var timer = 60;
