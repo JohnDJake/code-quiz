@@ -105,6 +105,8 @@ document.querySelector("#start").addEventListener("click", function () {
 // get the saved highscore and add the new score and save it
 // TODO redirect to the highscores page
 document.querySelector("#score-form").addEventListener("submit", function (event) {
+    // override the default submit behavior
+    event.preventDefault();
     // make sure the user entered their initials
     if (initialsInputEl.value == "") {
         event.preventDefault();
@@ -120,4 +122,7 @@ document.querySelector("#score-form").addEventListener("submit", function (event
     savedScores.sort(function (a, b) { return b.score - a.score });
     // save the updated scores array to localStorage
     localStorage.setItem("codeQuizScores", JSON.stringify(savedScores));
+
+    // redirect to the highscores page
+    location.href = "highscores.html";
 })
