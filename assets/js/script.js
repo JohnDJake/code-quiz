@@ -100,10 +100,11 @@ document.querySelector("#start").addEventListener("click", function () {
 // get the saved highscore and add the new score and save it
 // TODO redirect to the highscores page
 document.querySelector("#score-form").addEventListener("submit", function (event) {
-    // override default form submit behavior
-    event.preventDefault();
     // make sure the user entered their initials
-    if (initialsInputEl.value == "") { return; }
+    if (initialsInputEl.value == "") {
+        event.preventDefault();
+        return;
+    }
     // initials should be capitalized
     initialsInputEl.value = initialsInputEl.value.toUpperCase();
     // get savedScores from localStorage, or if there aren't any then initialize an empty array
