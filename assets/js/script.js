@@ -63,6 +63,7 @@ function shuffleArray(array) {
 // End the quiz
 function endGame() {
     clearInterval(timerInterval);
+    if (timer < 0) {timer = 0;}
     quizPageEl.style.display = "none";
     scoreInputEl.value = timer;
     scorePageEl.style.display = "block";
