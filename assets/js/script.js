@@ -2,6 +2,7 @@ const timerSpan = document.querySelector("#timer");
 const startPageEl = document.querySelector("#start-page");
 const quizPageEl = document.querySelector("#quiz-page");
 const scorePageEl = document.querySelector("#score-page");
+const scoreInputEl = document.querySelector("#score");
 const questionEl = document.querySelector("#question");
 const answer0El = document.querySelector("#answer0");
 const answer1El = document.querySelector("#answer1");
@@ -55,10 +56,10 @@ function shuffleArray(array) {
 }
 
 // End the quiz
-// TODO write some code
 function endGame() {
     clearInterval(timerInterval);
     quizPageEl.style.display = "none";
+    scoreInputEl.value = timer;
     scorePageEl.style.display = "block";
 }
 
