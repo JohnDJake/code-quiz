@@ -24,3 +24,8 @@ header {
 #score-page {
     display: none;
 }
+
+#scores-list {
+    color: white;
+    background-color: darkcyan;
+}
