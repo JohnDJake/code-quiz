@@ -17,6 +17,14 @@ var questions = [{
     question: "What do you call a function that you pass to an event handler?",
     answers: ["callback function", "callforward function", "textforward function", "emailback function"],
     correctAnswer: "callback function"
+}, {
+    question: "How many statements are in a for loop?",
+    answers: ["1", "2", "3", "4"],
+    correctAnswer: "3"
+}, {
+    question: "Which of the following is not a reserved keyword?",
+    answers: ["with", "set", "debugger", "catch"],
+    correctAnswer: "set"
 }]
 
 var timer = 60;
